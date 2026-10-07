@@ -1,0 +1,30 @@
+# Segreti: non vanno mai su GitHub
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dipendenze e build (se in futuro userai npm o simili)
+node_modules/
+dist/
+build/
+.cache/
+
+# File temporanei e di test
+*.log
+*.tmp
+t_*.html
+dom_*.txt
+shot_*.png
+
+# File di sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor e strumenti
+.vscode/
+.idea/
+*.swp
+.claude/
