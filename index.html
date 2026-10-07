@@ -470,6 +470,7 @@
   const DEATH_TIME = 0.85;   // seconds between the hit and the game-over screen
   const CHALLENGE_REWARD = 50;
   const BEST_KEY = 'neonRunnerBest';
+  const GAME_URL = 'https://darko-game.vercel.app'; // fixed link used when sharing, wherever the page is opened
 
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
   const lerp = (a, b, t) => a + (b - a) * t;
@@ -2061,7 +2062,7 @@
     });
   }
   shareBtn.addEventListener('click', () => {
-    const text = t('shareText', { score: run.score, url: window.location.href });
+    const text = t('shareText', { score: run.score, url: GAME_URL });
     copyText(text).then(() => { fallbackEl.hidden = true; showTip(t('copied')); }, () => {
       // last resort: show the text selected so the player can copy it by hand (never fail silently)
       fallbackEl.value = text; fallbackEl.hidden = false; fallbackEl.focus(); fallbackEl.select();
